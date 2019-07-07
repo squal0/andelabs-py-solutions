@@ -1,22 +1,19 @@
-def prime(num):
-    prime_nums = []
+def primes(n):
+        """prints a given list of prime numbers based on a range given n"""
+        primes_list = []
+        for num in range(1, n):
+                if is_prime(num) == True:
+                        primes_list.append(num)
+        return primes_list
 
-    for n in range(num + 1):
-        if (isPrime(n) is True):
-            prime_nums.append(n)
-
-    return prime_nums
-
-def isPrime(n):
-    n = abs(n)
-    
-    if(n < 2):
+def is_prime(x):
+    """Function to determine whether a given number x is a prime number """
+    x = abs(x) #ensures that x is an absolute number
+    if x < 2:
         return False
-    elif (n == 2):
+    elif x == 2:
         return True
-
-    for x in range(2, n):
-        if(n % x == 0):
+    for n in range (2, x):
+        if x % n == 0:
             return False
-
     return True
